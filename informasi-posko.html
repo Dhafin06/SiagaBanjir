@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informasi Posko - Siaga Banjir</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- ── Hero ── -->
+  <section class="hero hero-subpage">
+  <img class="hero-bg-img" src="image/background-banner.png" alt="Background Banner"/>
+  <img class="hero-overlay-img" src="image/icbanner-informasi-posko.png" alt="Banner Informasi Posko"/>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1 class="hero-h1-lg">Info Posko /<br />Kontak Darurat</h1>
+        <p>
+          Informasi penting untuk keadaan darurat<br />
+          dan lokasi posko bantuan terdekat.
+        </p>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 55" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,30 C400,60 1040,0 1440,30 L1440,55 L0,55 Z" fill="#f9fafb"/>
+      </svg>
+    </div>
+  </section>
+
+<!-- ── Nomer Darurat ── -->
+<section class="nomer-section">
+  <div class="nomer-inner">
+
+    <h2>Kontak Darurat</h2>
+
+    <p class="nomer-sub">
+      Simpan nomor penting berikut untuk keadaan darurat banjir.
+    </p>
+
+    <div class="nomer-grid">
+
+      <!-- 112 -->
+      <div class="nomer-card">
+
+        <div class="nomer-card-icon red">
+          <i class="fa-solid fa-phone-volume"></i>
+        </div>
+
+        <div>
+          <h3>112</h3>
+          <p>Layanan Darurat Nasional</p>
+        </div>
+
+      </div>
+
+      <!-- 113 -->
+      <div class="nomer-card">
+
+        <div class="nomer-card-icon orange">
+          <i class="fa-solid fa-fire-flame-curved"></i>
+        </div>
+
+        <div>
+          <h3>113</h3>
+          <p>Pemadam Kebakaran</p>
+        </div>
+
+      </div>
+
+      <!-- 119 -->
+      <div class="nomer-card">
+
+        <div class="nomer-card-icon blue">
+          <i class="fa-solid fa-truck-medical"></i>
+        </div>
+
+        <div>
+          <h3>119</h3>
+          <p>Ambulans / PSC</p>
+        </div>
+
+      </div>
+
+      <!-- Polisi -->
+      <div class="nomer-card">
+
+        <div class="nomer-card-icon">
+          <img src="image/icon-POLISI.png" alt="Polisi">
+        </div>
+
+        <div>
+          <h3>117</h3>
+          <p>Polisi</p>
+        </div>
+
+      </div>
+
+      <!-- BPBD Jawa Barat -->
+      <div class="nomer-card">
+
+        <div class="nomer-card-icon">
+          <img src="image/icon-BPBD.png" alt="BPBD Jawa Barat">
+        </div>
+
+        <div>
+          <h3>(022) 7312 111</h3>
+          <p>BPBD Jawa Barat</p>
+        </div>
+
+      </div>
+
+      <!-- BPBD Kota Bandung -->
+      <div class="nomer-card">
+
+        <div class="nomer-card-icon">
+          <img src="image/icon-BPBD.png" alt="BPBD Kota Bandung">
+        </div>
+
+        <div>
+          <h3>XXX</h3>
+          <p>BPBD Kota Bandung</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ── Lokasi Posko ── -->
+  <section class="lokasi-section">
+    <div class="lokasi-inner">
+      <h2>Lokasi Posko</h2>
+      <p class="lokasi-sub">Daftar posko BPBD Jawa Barat beserta kontak yang dapat dihubungi.</p>
+      <div class="lokasi-table-wrap">
+        <table class="lokasi-table">
+          <thead>
+            <tr>
+              <th>Nama BPBD</th>
+              <th>Alamat</th>
+              <th>Telepon</th>
+            </tr>
+          </thead>
+          <tbody id="posko-tbody">
+          </tbody>
+        </table>
+      </div>
+      <!-- Pagination -->
+      <div class="pagination-wrap" id="pagination-wrap"></div>
+      <div class="peta-posko-banner">
+        <div class="peta-posko-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="peta-posko-text">
+          <h4>Peta Lokasi Posko</h4>
+          <p>Ikuti informasi dari instansi resmi dan hindari penyebaran berita yang belum terverifikasi</p>
+        </div>
+        <a href="area-rawan.html" class="btn-peta">Lihat Peta →</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const poskoData = [
+      // -- Yang ada kontak di atas --
+      { nama: "BPBD Provinsi Jawa Barat", alamat: "Jl. Soekarno Hatta No. 629, Sukapura, Kec. Kiaracondong, Kota Bandung, Jawa Barat 40286", telepon: "022-7313267 / 022-7315274" },
+      { nama: "BPBD Kab. Bandung Barat", alamat: "Kantor Pemda Kab. Bandung Barat, Ged. A Lt. Dasar, Jl. Padalarang–Cisarua Km. 2, Ds. Mekarsari, Kec. Ngamprah", telepon: "0877-1661-2121" },
+      { nama: "BPBD Kab. Bandung", alamat: "Komp. Perkantoran Pemkab Bandung, Jl. Raya Soreang KM 17, Soreang 40911", telepon: "0851-6290-1129" },
+      { nama: "BPBD Kab. Bogor", alamat: "Jl. Raya Tegar Beriman No. 1, Kel. Pakansari, Kec. Cibinong, Kab. Bogor", telepon: "(021) 87914800" },
+      { nama: "BPBD Kab. Bekasi", alamat: "Komp. Perkantoran Pemda Kab. Bekasi, Desa Sukamahi, Kec. Cikarang Pusat", telepon: "(021) 89970506 / 0812-1907-1900" },
+      { nama: "BPBD Kab. Ciamis", alamat: "Jl. RAA Sastrawinata No. 3, Kertasari, Kec. Ciamis, Kab. Ciamis, Jawa Barat 46213", telepon: "(0265) 775702 / 0811-2316-567" },
+      { nama: "BPBD Kab. Majalengka", alamat: "Jl. Gerakan Koperasi No. 43, Majalengka Wetan, Kec. Majalengka, Kab. Majalengka 45411", telepon: "(0233) 283044 / 0823-4040-0300" },
+      // -- Tanpa kontak --
+      { nama: "BPBD Kab. Sukabumi", alamat: "Jl. Pabuaran No. 09, Kec. Warudoyong 43132", telepon: "-" },
+      { nama: "BPBD Kab. Garut", alamat: "Jalan Pramuka No. 06, Garut", telepon: "-" },
+      { nama: "BPBD Kab. Kuningan", alamat: "Lt. 2 Asda II Setda Kab. Kuningan", telepon: "-" },
+      { nama: "BPBD Kab. Indramayu", alamat: "Jalan Pahlawan No. 62/A, Indramayu", telepon: "-" },
+      { nama: "BPBD Kab. Sumedang", alamat: "Jalan Pangeran Geusan Ulun No. 36, Sumedang", telepon: "-" },
+      { nama: "BPBD Kab. Tasikmalaya", alamat: "Jalan Otto Iskandardinata No. 19, Tasikmalaya", telepon: "-" },
+      { nama: "BPBD Kab. Pangandaran", alamat: "Jl. Raya Parigi No. 14, Karangbenda, Parigi, Pangandaran, Jawa Barat 46393", telepon: "-" },
+      { nama: "BPBD Kota Bekasi", alamat: "Jl. A. Yani No. 1, Kota Bekasi 17143", telepon: "-" },
+      { nama: "BPBD Kota Bogor", alamat: "Jl. KH. Abdullah Bin Nuh, Semplak, Bogor Barat, Kota Bogor, Jawa Barat 16114", telepon: "-" },
+      { nama: "BPBD Kota Cimahi", alamat: "Jl. Cihanjuang, Kota Cimahi", telepon: "-" },
+      { nama: "BPBD Kota Cirebon", alamat: "Jl. DR. Cipto Mangunkusumo No. 123, Pekiringan, Kesambi, Kota Cirebon 45131", telepon: "-" },
+      { nama: "BPBD Kota Sukabumi", alamat: "Jl. Julius Usman No. 2, Sukabumi", telepon: "-" },
+      { nama: "BPBD Kota Tasikmalaya", alamat: "Jl. Sutisna Senjaya No. 231, Cikalang, Tawang, Tasikmalaya 46113", telepon: "-" },
+    ];
+
+    const PER_PAGE = 5;
+    let currentPage = 1;
+    const totalPages = Math.ceil(poskoData.length / PER_PAGE);
+
+    function renderTable(page) {
+      const tbody = document.getElementById('posko-tbody');
+      const start = (page - 1) * PER_PAGE;
+      const slice = poskoData.slice(start, start + PER_PAGE);
+      tbody.innerHTML = slice.map(d => `
+        <tr>
+          <td>${d.nama}</td>
+          <td>${d.alamat}</td>
+          <td>${d.telepon === '-' ? '<span style="color:#aaa">—</span>' : `<a href="tel:${d.telepon.replace(/[^0-9+]/g,'')}" style="color:var(--teal)">${d.telepon}</a>`}</td>
+        </tr>`).join('');
+    }
+
+    function renderPagination(page) {
+      const wrap = document.getElementById('pagination-wrap');
+      let html = '';
+      html += `<button class="pg-btn" onclick="goPage(${page-1})" ${page===1?'disabled':''}>&#8592;</button>`;
+      for (let i = 1; i <= totalPages; i++) {
+        html += `<button class="pg-btn ${i===page?'pg-active':''}" onclick="goPage(${i})">${i}</button>`;
+      }
+      html += `<button class="pg-btn" onclick="goPage(${page+1})" ${page===totalPages?'disabled':''}>&#8594;</button>`;
+      wrap.innerHTML = html;
+    }
+
+    function goPage(p) {
+      if (p < 1 || p > totalPages) return;
+      currentPage = p;
+      renderTable(currentPage);
+      renderPagination(currentPage);
+    }
+
+    goPage(1);
+  </script>
+
+<!-- ── Instansi Terkait ── -->
+<section class="instansi-section">
+  <div class="instansi-inner">
+
+    <h2>Instansi Terkait</h2>
+
+    <p class="instansi-sub">
+      Lembaga dan instansi pendukung penanganan bencana banjir.
+    </p>
+
+    <div class="instansi-grid">
+
+      <!-- BPBD -->
+      <div class="instansi-card">
+        <div class="instansi-logo bpbd">
+          <img src="image/icon-BPBD.png" alt="BPBD">
+        </div>
+
+        <div>
+          <h3>BPBD</h3>
+          <p>Badan Penanggulangan Bencana Daerah</p>
+        </div>
+      </div>
+
+      <!-- BMKG -->
+      <div class="instansi-card">
+        <div class="instansi-logo bmkg">
+          <img src="image/icon-BMKG.png" alt="BMKG">
+        </div>
+
+        <div>
+          <h3>BMKG</h3>
+          <p>Badan Meteorologi, Klimatologi, dan Geofisika</p>
+        </div>
+      </div>
+
+      <!-- DINSOS -->
+      <div class="instansi-card">
+        <div class="instansi-logo dinsos">
+          <img src="image/icon-DINSOS.png" alt="DINSOS">
+        </div>
+
+        <div>
+          <h3>DINSOS</h3>
+          <p>Dinas Sosial Kota Bandung</p>
+        </div>
+      </div>
+
+      <!-- PMI -->
+      <div class="instansi-card">
+        <div class="instansi-logo pmi">
+          <img src="image/icon-PMI.png" alt="PMI">
+        </div>
+
+        <div>
+          <h3>PMI</h3>
+          <p>Palang Merah Indonesia</p>
+        </div>
+      </div>
+
+      <!-- TNI -->
+      <div class="instansi-card">
+        <div class="instansi-logo tni">
+          <img src="image/icon-TNI.png" alt="TNI">
+        </div>
+
+        <div>
+          <h3>TNI</h3>
+          <p>Tentara Nasional Indonesia</p>
+        </div>
+      </div>
+
+      <!-- POLISI -->
+      <div class="instansi-card">
+        <div class="instansi-logo polisi">
+          <img src="image/icon-POLISI.png" alt="POLISI">
+        </div>
+
+        <div>
+          <h3>POLISI</h3>
+          <p>Kepolisian Republik Indonesia</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ── Waspada Banner ── -->
+  <section class="waspada-section">
+    <div class="waspada-inner">
+      <div class="waspada-banner">
+        <div class="waspada-icon">
+          <i class="fa-solid fa-bullhorn"></i>
+        </div>
+        <div class="waspada-text">
+          <h3>Tetap Waspada dan Ikuti Informasi Resmi</h3>
+          <p>
+            Ikuti informasi dari instansi resmi dan hindari penyebaran<br />
+            berita yang belum terverifikasi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="components.js"></script>
+
+</body>
+</html>

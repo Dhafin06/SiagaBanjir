@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peta / Area Rawan - Siaga Banjir</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+<!-- ── Hero ── -->
+<section class="hero hero-subpage">
+  <img class="hero-bg-img" src="image/background-banner.png" alt="Background Banner"/>
+  <img class="hero-overlay-img" src="image/icbanner-area-rawan.png" alt="Banner Area Rawan"/>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>Peta / Area Rawan</h1>
+      <p>
+        Pantau wilayah rawan banjir di sekitar anda.
+        Lihat tingkat risiko dan area yang berpotensi
+        terdampak untuk kewaspadaan lebih dini.
+      </p>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 55" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,30 C400,60 1040,0 1440,30 L1440,55 L0,55 Z" fill="#f9fafb"/>
+    </svg>
+  </div>
+</section>
+
+  <!-- ── Peta Lokasi Rawan Banjir ── -->
+  <section class="map-section">
+    <div class="map-section-inner">
+      <div class="section-header">
+        <h2>Peta Lokasi Rawan Banjir</h2>
+        <p>Peta berikut merupakan sebaran wilayah rawan banjir berdasarkan tingkat risiko</p>
+      </div>
+      <div class="map-layout">
+        <div class="map-container">
+          <div id="leaflet-map"></div>
+        </div>
+        <div class="map-legend">
+          <h3>Legenda Risiko</h3>
+          <div class="legend-item">
+            <div class="legend-dot red"></div>
+            <div class="legend-text">
+              <h4 class="red">Risiko Tinggi</h4>
+              <p>Wilayah dengan potensi banjir tinggi. Sering terjadi genangan / banjir.</p>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot yellow"></div>
+            <div class="legend-text">
+              <h4 class="yellow">Risiko Sedang</h4>
+              <p>Wilayah dengan potensi banjir Sedang. Dapat terjadi saat hujan lebat.</p>
+            </div>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot green"></div>
+            <div class="legend-text">
+              <h4 class="green">Risiko Rendah</h4>
+              <p>Wilayah dengan potensi banjir rendah. Relatif aman namun tetap waspada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Informasi Tingkat Risiko ── -->
+  <section class="risk-info-section">
+    <div class="risk-info-inner">
+      <h2 class="risk-section-title">Informasi Tingkat Risiko</h2>
+      <div class="risk-cards-grid">
+
+        <!-- Risiko Tinggi -->
+        <div class="risk-card">
+          <div class="risk-card-header">
+            <div class="risk-card-icon red">
+              <i class="fa-solid fa-house-flood-water"></i>
+            </div>
+            <h3 class="red">Risiko Tinggi</h3>
+          </div>
+          <ul class="risk-bullet-list">
+            <li><i class="fa-solid fa-circle-xmark red"></i> Riwayat banjir &gt; 3 kali/tahun</li>
+            <li><i class="fa-solid fa-circle-xmark red"></i> Ketinggian genangan &gt; 70 cm</li>
+            <li><i class="fa-solid fa-circle-xmark red"></i> Drainase buruk</li>
+            <li><i class="fa-solid fa-circle-xmark red"></i> Kepadatan penduduk tinggi</li>
+            <li><i class="fa-solid fa-circle-xmark red"></i> Dekat sungai / aliran utama</li>
+          </ul>
+        </div>
+
+        <!-- Risiko Sedang -->
+        <div class="risk-card">
+          <div class="risk-card-header">
+            <div class="risk-card-icon yellow">
+              <i class="fa-solid fa-house-flood-water"></i>
+            </div>
+            <h3 class="yellow">Risiko Sedang</h3>
+          </div>
+          <ul class="risk-bullet-list">
+            <li><i class="fa-solid fa-circle-check yellow"></i> Riwayat banjir 1 - 2/tahun</li>
+            <li><i class="fa-solid fa-circle-check yellow"></i> Ketinggian genangan 30-70 cm</li>
+            <li><i class="fa-solid fa-circle-check yellow"></i> Drainase cukup</li>
+            <li><i class="fa-solid fa-circle-check yellow"></i> Kepadatan penduduk sedang</li>
+            <li><i class="fa-solid fa-circle-check yellow"></i> Sedang dekat aliran air</li>
+          </ul>
+        </div>
+
+        <!-- Risiko Rendah -->
+        <div class="risk-card">
+          <div class="risk-card-header">
+            <div class="risk-card-icon green">
+              <i class="fa-solid fa-house-flood-water"></i>
+            </div>
+            <h3 class="green">Risiko Rendah</h3>
+          </div>
+          <ul class="risk-bullet-list">
+            <li><i class="fa-solid fa-circle-check green"></i> Riwayat banjir jarang</li>
+            <li><i class="fa-solid fa-circle-check green"></i> Ketinggian genangan &lt; 30 cm</li>
+            <li><i class="fa-solid fa-circle-check green"></i> Drainase baik</li>
+            <li><i class="fa-solid fa-circle-check green"></i> Kepadatan penduduk rendah</li>
+            <li><i class="fa-solid fa-circle-check green"></i> Jauh dari aliran utama</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Data Daerah Terdampak ── -->
+  <section class="data-section">
+    <div class="data-section-inner">
+      <div class="data-section-header">
+        <h2>Data Daerah Terdampak</h2>
+        <p>Ringkasan wilayah dan jumlah titik rawan banjir di Kabupaten Bandung</p>
+      </div>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Kecamatan</th>
+              <th>Tingkat Risiko</th>
+              <th>Jumlah Titik Rawan</th>
+              <th>Status Terdampak</th>
+              <th>Keterangan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Baleendah</td>
+              <td><span class="badge-tinggi">Risiko Tinggi</span></td>
+              <td>28</td>
+              <td><span class="status-sering">Sering Terdampak</span></td>
+              <td>Genangan &gt; 70 cm saat hujan lebat</td>
+            </tr>
+            <tr>
+              <td>Dayeuhkolot</td>
+              <td><span class="badge-tinggi">Risiko Tinggi</span></td>
+              <td>25</td>
+              <td><span class="status-sering">Sering Terdampak</span></td>
+              <td>Dekat aliran Sungai Citarum</td>
+            </tr>
+            <tr>
+              <td>Bojongsoang</td>
+              <td><span class="badge-sedang">Risiko Sedang</span></td>
+              <td>18</td>
+              <td><span class="status-kadang">Kadang Terdampak</span></td>
+              <td>Genangan 30 - 50 cm</td>
+            </tr>
+            <tr>
+              <td>Rancasari</td>
+              <td><span class="badge-rendah">Risiko Rendah</span></td>
+              <td>10</td>
+              <td><span class="status-jarang">Jarang Terdampak</span></td>
+              <td>Drainase baik, dataran lebih tinggi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="data-footnote">*Data bersumber dari BPBD Kabupaten Bandung dan diperbarui secara berkala</p>
+    </div>
+  </section>
+
+  <!-- ── Waspada Banner ── -->
+  <section class="waspada-section">
+    <div class="waspada-inner">
+      <div class="waspada-banner">
+        <div class="waspada-icon">
+          <i class="fa-solid fa-bullhorn"></i>
+        </div>
+        <div class="waspada-text">
+          <h3>Tetap Waspada dan Cek Informasi Resmi</h3>
+          <p>
+            Selalu pantau informasi resmi dari instansi terkait dan jangan sebarkan<br />
+            hoaks. Kesiapsiagaan anda dapat menyelamatkan anda dan keluarga.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('leaflet-map', { zoomControl: true }).setView([-7.002, 107.635], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    function makeIcon(color) {
+      return L.divIcon({
+        className: '',
+        html: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36">
+          <path d="M14 0C6.268 0 0 6.268 0 14c0 9.941 14 22 14 22S28 23.941 28 14C28 6.268 21.732 0 14 0z" fill="${color}" stroke="white" stroke-width="1.5"/>
+          <circle cx="14" cy="14" r="5" fill="white"/>
+        </svg>`,
+        iconSize: [28, 36],
+        iconAnchor: [14, 36],
+        popupAnchor: [0, -36]
+      });
+    }
+
+    const redIcon    = makeIcon('#e53e3e');
+    const yellowIcon = makeIcon('#d97706');
+    const greenIcon  = makeIcon('#16a34a');
+
+    // Risiko Tinggi (red)
+    L.marker([-7.003, 107.618], { icon: redIcon }).addTo(map).bindPopup('<b>Baleendah</b><br>Risiko Tinggi');
+    L.marker([-6.999, 107.628], { icon: redIcon }).addTo(map).bindPopup('<b>Dayeuhkolot</b><br>Risiko Tinggi');
+    L.marker([-7.014, 107.638], { icon: redIcon }).addTo(map).bindPopup('<b>Baleendah Selatan</b><br>Risiko Tinggi');
+    L.marker([-7.022, 107.625], { icon: redIcon }).addTo(map).bindPopup('<b>Rawan Banjir</b><br>Risiko Tinggi');
+
+    // Risiko Sedang (yellow/orange)
+    L.marker([-6.990, 107.650], { icon: yellowIcon }).addTo(map).bindPopup('<b>Bojongsoang</b><br>Risiko Sedang');
+    L.marker([-7.008, 107.652], { icon: yellowIcon }).addTo(map).bindPopup('<b>Bojongsoang Timur</b><br>Risiko Sedang');
+    L.marker([-6.994, 107.612], { icon: yellowIcon }).addTo(map).bindPopup('<b>Wilayah Sedang</b><br>Risiko Sedang');
+
+    // Risiko Rendah (green)
+    L.marker([-6.978, 107.638], { icon: greenIcon }).addTo(map).bindPopup('<b>Rancasari</b><br>Risiko Rendah');
+    L.marker([-6.985, 107.622], { icon: greenIcon }).addTo(map).bindPopup('<b>Wilayah Aman</b><br>Risiko Rendah');
+  </script>
+  <div id="footer-placeholder"></div>
+  <script src="components.js"></script>
+
+</body>
+</html>
