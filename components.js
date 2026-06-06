@@ -27,6 +27,12 @@
           </div>
         </a>
         <ul class="nav-links">${navLinks}</ul>
+        <button class="nav-burger" id="nav-burger" aria-label="Buka menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav-mobile-menu" id="nav-mobile-menu">
+        <ul>${navLinks}</ul>
       </div>
     </nav>`;
 
@@ -62,4 +68,22 @@
   const footEl = document.getElementById('footer-placeholder');
   if (navEl) navEl.outerHTML = navbarHTML;
   if (footEl) footEl.outerHTML = footerHTML;
+
+  // ── Burger toggle ────────────────────────────────────────
+  const burger = document.getElementById('nav-burger');
+  const mobileMenu = document.getElementById('nav-mobile-menu');
+  if (burger && mobileMenu) {
+    burger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+    });
+    // Tutup menu saat link diklik
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        burger.classList.remove('open');
+      });
+    });
+  }
 })();
