@@ -47,7 +47,7 @@
             </div>
           </div>
           <p class="footer-desc">
-            Website ini menyediakan informasi dan edukasi banjir untuk meningkatkan kesiapsiagaan masyarakat.
+            Siaga Banjir menyediakan informasi banjir terkini, peta area rawan, lokasi posko BPBD, serta edukasi kebencanaan untuk meningkatkan kesiapsiagaan masyarakat Jawa Barat.
           </p>
         </div>
         <div class="footer-col">

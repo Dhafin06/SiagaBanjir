@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
+:root {
+  --teal: #1B5D54;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -711,13 +715,13 @@ body {
 .footer {
   background: #1B5D54;
   color: white;
-  padding: 48px 0;
+  padding: 28px 0;
 }
 
 .footer-inner {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 24px 48px;
+  padding: 0 24px 24px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -732,8 +736,8 @@ body {
 }
 
 .footer-logo-icon {
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   color: white;
   font-size: 26px;
   display: flex;
@@ -742,7 +746,7 @@ body {
 }
 
 .footer-logo-title {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 800;
   color: white;
 }
@@ -753,10 +757,10 @@ body {
 }
 
 .footer-desc {
-  font-size: 13px;
+  font-size: 12px;
   color: rgba(255,255,255,0.75);
-  line-height: 1.7;
-  margin-bottom: 20px;
+  line-height: 1.6;
+  margin-bottom: 12px;
 }
 
 .footer-socials {
@@ -776,17 +780,17 @@ body {
 }
 
 .footer-col h4 {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   color: white;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .footer-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
 
 .footer-links a {
@@ -1508,7 +1512,7 @@ body {
 
 .nomer-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:16px;
 }
 
