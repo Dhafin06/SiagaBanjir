@@ -6,7 +6,7 @@
     { label: 'Area Rawan',        href: 'area-rawan.html' },
     { label: 'Informasi Banjir',  href: 'informasi-banjir.html' },
     { label: 'Edukasi',           href: 'edukasi.html' },
-    { label: 'Informasi Posko',   href: 'informasi-posko.html' },
+    { label: 'Informasi BPBD',   href: 'informasi-posko.html' },
   ];
 
   const currentFile = location.pathname.split('/').pop() || 'index.html';
