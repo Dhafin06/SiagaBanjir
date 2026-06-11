@@ -167,6 +167,20 @@
               <td data-label="Keterangan">Dekat aliran Sungai Citarum</td>
             </tr>
             <tr>
+              <td>Baleendah Selatan</td>
+              <td data-label="Tingkat Risiko"><span class="badge-tinggi">Risiko Tinggi</span></td>
+              <td data-label="Titik Rawan">15</td>
+              <td data-label="Status"><span class="status-sering">Sering Terdampak</span></td>
+              <td data-label="Keterangan">Kawasan padat penduduk, resapan air minim</td>
+            </tr>
+            <tr>
+              <td>Andir</td>
+              <td data-label="Tingkat Risiko"><span class="badge-tinggi">Risiko Tinggi</span></td>
+              <td data-label="Titik Rawan">20</td>
+              <td data-label="Status"><span class="status-sering">Sering Terdampak</span></td>
+              <td data-label="Keterangan">Topografi rendah, limpasan air sungai</td>
+            </tr>
+            <tr>
               <td>Bojongsoang</td>
               <td data-label="Tingkat Risiko"><span class="badge-sedang">Risiko Sedang</span></td>
               <td data-label="Titik Rawan">18</td>
@@ -174,11 +188,32 @@
               <td data-label="Keterangan">Genangan 30 - 50 cm</td>
             </tr>
             <tr>
+              <td>Bojongsoang Timur</td>
+              <td data-label="Tingkat Risiko"><span class="badge-sedang">Risiko Sedang</span></td>
+              <td data-label="Titik Rawan">12</td>
+              <td data-label="Status"><span class="status-kadang">Kadang Terdampak</span></td>
+              <td data-label="Keterangan">Kapasitas drainase mulai menurun</td>
+            </tr>
+            <tr>
+              <td>Ciparay</td>
+              <td data-label="Tingkat Risiko"><span class="badge-sedang">Risiko Sedang</span></td>
+              <td data-label="Titik Rawan">14</td>
+              <td data-label="Status"><span class="status-kadang">Kadang Terdampak</span></td>
+              <td data-label="Keterangan">Potensi genangan saat hujan ekstrem</td>
+            </tr>
+            <tr>
               <td>Rancasari</td>
               <td data-label="Tingkat Risiko"><span class="badge-rendah">Risiko Rendah</span></td>
               <td data-label="Titik Rawan">10</td>
               <td data-label="Status"><span class="status-jarang">Jarang Terdampak</span></td>
               <td data-label="Keterangan">Drainase baik, dataran lebih tinggi</td>
+            </tr>
+            <tr>
+              <td>Margahayu</td>
+              <td data-label="Tingkat Risiko"><span class="badge-rendah">Risiko Rendah</span></td>
+              <td data-label="Titik Rawan">5</td>
+              <td data-label="Status"><span class="status-jarang">Jarang Terdampak</span></td>
+              <td data-label="Keterangan">Kawasan relatif aman dan terkendali</td>
             </tr>
           </tbody>
         </table>
@@ -234,16 +269,16 @@
     L.marker([-7.003, 107.618], { icon: redIcon }).addTo(map).bindPopup('<b>Baleendah</b><br>Risiko Tinggi');
     L.marker([-6.999, 107.628], { icon: redIcon }).addTo(map).bindPopup('<b>Dayeuhkolot</b><br>Risiko Tinggi');
     L.marker([-7.014, 107.638], { icon: redIcon }).addTo(map).bindPopup('<b>Baleendah Selatan</b><br>Risiko Tinggi');
-    L.marker([-7.022, 107.625], { icon: redIcon }).addTo(map).bindPopup('<b>Rawan Banjir</b><br>Risiko Tinggi');
+    L.marker([-7.022, 107.625], { icon: redIcon }).addTo(map).bindPopup('<b>Andir</b><br>Risiko Tinggi');
 
     // Risiko Sedang (yellow/orange)
     L.marker([-6.990, 107.650], { icon: yellowIcon }).addTo(map).bindPopup('<b>Bojongsoang</b><br>Risiko Sedang');
     L.marker([-7.008, 107.652], { icon: yellowIcon }).addTo(map).bindPopup('<b>Bojongsoang Timur</b><br>Risiko Sedang');
-    L.marker([-6.994, 107.612], { icon: yellowIcon }).addTo(map).bindPopup('<b>Wilayah Sedang</b><br>Risiko Sedang');
+    L.marker([-6.994, 107.612], { icon: yellowIcon }).addTo(map).bindPopup('<b>Ciparay</b><br>Risiko Sedang');
 
     // Risiko Rendah (green)
     L.marker([-6.978, 107.638], { icon: greenIcon }).addTo(map).bindPopup('<b>Rancasari</b><br>Risiko Rendah');
-    L.marker([-6.985, 107.622], { icon: greenIcon }).addTo(map).bindPopup('<b>Wilayah Aman</b><br>Risiko Rendah');
+    L.marker([-6.985, 107.622], { icon: greenIcon }).addTo(map).bindPopup('<b>Margahayu</b><br>Risiko Rendah');
   </script>
   <div id="footer-placeholder"></div>
   <script src="components.js"></script>
