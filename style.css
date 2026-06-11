@@ -104,6 +104,7 @@ body {
 }
 .nav-burger span {
   display: block;
+  width: 100%;
   height: 2px;
   background: #1B5D54;
   border-radius: 2px;
@@ -2062,6 +2063,47 @@ body {
    RESPONSIVE — letakkan di akhir agar override
    ═══════════════════════════════════════════ */
 
+/* ── Tablet (≤991px) ── */
+@media(max-width:991px){
+  /* Navbar */
+  .nav-links{ display:none; }
+  .nav-burger{ display:flex; }
+  .nav-mobile-menu{ display:block; }
+  
+  /* Grids */
+  .stats-inner, .why-grid, .risk-cards-grid, .instansi-grid,
+  .features-grid, .dampak-grid, .nomer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .penyebab-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Edukasi cards */
+  .edu-card {
+    flex-direction: column;
+    min-height: unset;
+  }
+  .edu-card.bg-white {
+    flex-direction: column-reverse;
+  }
+  .edu-card-image {
+    width: 100%;
+    height: 240px;
+    flex: none;
+  }
+  
+  /* Apa Itu Banjir */
+  .apa-banjir-layout {
+    flex-direction: column;
+  }
+  .apa-banjir-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 /* ── Mobile (≤768px) ── */
 @media(max-width:768px){
 
@@ -2418,6 +2460,11 @@ body {
   .cta-banner h2{ font-size:18px; }
   .cta-banner p{ font-size:13px; }
   .wilayah-jenis{ flex-wrap:wrap; gap:8px; }
+  .wilayah-table-wrap{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  .wilayah-table{ min-width:500px; }
 
   /* ── Informasi Posko ── */
   .nomer-grid{
